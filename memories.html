@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Memories - Coding Journey</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?v=6">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <!-- Header / Nav -->
+    <header class="header">
+        <a href="index.html" class="logo">Portfolio.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#journey">Journey</a>
+            <a href="index.html#works">Works</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Memories Section -->
+    <section class="memories" id="memories">
+        <h2 class="heading">Past <span>Memories</span></h2>
+        <p class="memories-subtitle">A glimpse into the late nights, endless coffee cups, and lines of code that shaped
+            my journey since June 2025.</p>
+
+        <div class="memories-gallery">
+            <div class="memory-card">
+                <img src="mem5.jpg" alt="Deep Focus">
+                <div class="memory-overlay">
+                    <i class='bx bx-headphone'></i>
+                    <h4>Deep Focus</h4>
+                    <p>In the zone, locking in the logic and building the future.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem4.jpg" alt="The Code">
+                <div class="memory-overlay">
+                    <i class='bx bx-code-block'></i>
+                    <h4>The Code</h4>
+                    <p>Writing and debugging the architecture late into the night.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem2.jpg" alt="Knowledge Sharing">
+                <div class="memory-overlay">
+                    <i class='bx bx-chalkboard'></i>
+                    <h4>Knowledge Sharing</h4>
+                    <p>Presenting ideas, strategies, and code to the team.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem3.jpg" alt="Collaboration">
+                <div class="memory-overlay">
+                    <i class='bx bx-group'></i>
+                    <h4>Collaboration</h4>
+                    <p>Working through complex problems together.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem1.jpg" alt="Milestones">
+                <div class="memory-overlay">
+                    <i class='bx bx-trophy'></i>
+                    <h4>Milestones</h4>
+                    <p>Taking a breath and celebrating the coding milestones.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem6.jpg" alt="Team Synergy">
+                <div class="memory-overlay">
+                    <i class='bx bx-party'></i>
+                    <h4>Team Synergy</h4>
+                    <p>Having fun and making memories with the amazing team.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem7.jpg" alt="Architecture Planning">
+                <div class="memory-overlay">
+                    <i class='bx bx-map-alt'></i>
+                    <h4>Architecture</h4>
+                    <p>Whiteboarding the core vision and strategy.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem8.jpg" alt="Late Night Coding">
+                <div class="memory-overlay">
+                    <i class='bx bx-coffee-togo'></i>
+                    <h4>Building Systems</h4>
+                    <p>Refactoring codebases line by line in the ide.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem9.jpg" alt="UniStyle Deployment">
+                <div class="memory-overlay">
+                    <i class='bx bx-laptop'></i>
+                    <h4>UniStyle Deployment</h4>
+                    <p>Deploying the UniStyle Barber shop interface live.</p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <img src="mem10.jpg" alt="Voice Control Integrations">
+                <div class="memory-overlay">
+                    <i class='bx bx-microphone'></i>
+                    <h4>Advanced Integrations</h4>
+                    <p>Setting up voice access and complex functionalities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="index.html#journey" class="btn"><i class='bx bx-arrow-back'></i> Back to Journey</a>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2026 | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#memories"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        /* --- ScrollReveal Interactions --- */
+        ScrollReveal({
+            distance: '80px',
+            duration: 2000,
+            delay: 200
+        });
+
+        ScrollReveal().reveal('.heading, .memories-subtitle', { origin: 'top' });
+        ScrollReveal().reveal('.memory-card', { origin: 'bottom', interval: 200 });
+        ScrollReveal().reveal('.back-btn-container', { origin: 'bottom', delay: 400 });
+    </script>
+
+</body>
+
+</html>
