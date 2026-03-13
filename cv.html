@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhijin K M - CV</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3b7197;
+            --bg-sidebar: #e8ecef;
+            --text-dark: #333;
+            --text-light: #555;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            color: var(--text-dark);
+        }
+
+        .resume-container {
+            width: 100%;
+            max-width: 850px;
+            background: #fff;
+            display: flex;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 35%;
+            background-color: var(--bg-sidebar);
+            padding: 40px 30px;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 30px;
+            border: 4px solid var(--primary-color);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            color: var(--primary-color);
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            font-size: 13px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .contact-list i {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .list-items {
+            list-style: none;
+        }
+
+        .list-items li {
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .list-items li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.5;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .education-item::before {
+            content: "◎";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            width: 65%;
+            padding: 50px 40px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .name {
+            color: var(--primary-color);
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            color: #888;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .line {
+            height: 2px;
+            width: 50px;
+            background-color: var(--primary-color);
+        }
+
+        .content-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .profile-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        .areas-list {
+            columns: 2;
+            list-style: none;
+        }
+
+        .areas-list li {
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .areas-list li::before {
+            content: "•";
+            color: var(--text-light);
+        }
+
+        .experience-role {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .timeline-item {
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding-left: 20px;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .timeline-item::before {
+            content: "◎";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .resume-container {
+                flex-direction: column;
+            }
+            .sidebar, .main-content {
+                width: 100%;
+            }
+        }
+        
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .print-btn {
+                display: none;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .print-btn:hover {
+            background: #2a5270;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()"><i class='bx bx-printer'></i> Print / Save as PDF</button>
+
+    <div class="resume-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile-pic">
+                <!-- Using placeholder, you can replace with the real image path if you have it -->
+                <img src="im.jpeg" alt="Profile" onerror="this.src='clint.jpeg'; this.onerror=function(){this.src='chiling.jpeg'}">
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">CONTACT</h3>
+                <ul class="contact-list">
+                    <li><i class='bx bxs-phone'></i> 9567964340</li>
+                    <li><i class='bx bxs-envelope'></i> abhijinkm35@gmail.com</li>
+                    <li><i class='bx bxs-map'></i> Olothigal(House) Urath, Kuttiyadi</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">SKILLS</h3>
+                <ul class="list-items">
+                    <li>Fitness assessment</li>
+                    <li>Developing exercise programs</li>
+                    <li>Strength and conditioning</li>
+                    <li>Relationship development</li>
+                    <li>Lifestyle coaching</li>
+                    <li>Healthy living role model</li>
+                    <li>Group training</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">LANGUAGES</h3>
+                <ul class="list-items">
+                    <li>English</li>
+                    <li>Malayalam</li>
+                    <li>Tamil</li>
+                    <li>Hindi</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">EDUCATION</h3>
+                <div class="education-item">
+                    MERN STACK DEVELOPMENT,<br>
+                    KOZHIKODE
+                </div>
+                <div class="education-item">
+                    I.T.I IN COMPUTER HARDWARE & NETWORK MAINTENANCE,<br>
+                    GOVERNMENT ITI COLLEGE, KOYILANDY, KERALA
+                </div>
+                <div class="education-item">
+                    PLUS TWO (HIGHER SECONDARY),<br>
+                    STATE BOARD OF KERALA
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1 class="name">ABHIJIN K M</h1>
+                <h2 class="job-title">COACH</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">PERSONAL PROFILE</h3>
+                <p class="profile-text">
+                    Dedicated Martial Instructor cum motivated Fitness Trainer, who focus on developing discipline and mastering confidence in clients at all fitness levels. Strongly believe that health is a conscious lifestyle choice necessary for longevity and happiness.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">AREAS OF EXPERTISE</h3>
+                <ul class="areas-list">
+                    <li>Kung Fu</li>
+                    <li>Karate</li>
+                    <li>Kick Boxing</li>
+                    <li>Self Defence</li>
+                    <li>Safety Techniques</li>
+                    <li>Boxing</li>
+                    <li>Wushu</li>
+                    <li>Wrestling</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">WORK EXPERIENCE</h3>
+                <div class="experience-role">Personal Trainer</div>
+                
+                <div class="timeline-item">
+                    UNITED MARTIAL ARTS ACADEMY INTERNATIONAL CALICUT | KUNG FU | 2023
+                </div>
+                <div class="timeline-item">
+                    MASTER FIT , KUTTIADY | KARATE | 2022
+                </div>
+                <div class="timeline-item">
+                    BOOSTER , PUZHIPOTH | KARATE | 2022
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">ACHIEVEMENTS</h3>
+                <div class="timeline-item">
+                    42 BKI NATIONAL KARATE CHAMPIONSHIP KATA BROWN MEDALS | 2024
+                </div>
+                <div class="timeline-item">
+                    STATE WUSHU CHAMPIONSHIP GOLD MEDALS | 2016
+                </div>
+                <div class="timeline-item">
+                    WUSHU CHAMPIONSHIP BROWN MEDAL | 2017
+                </div>
+                <div class="timeline-item">
+                    WRESTLING SILVER MEDAL | 2023
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
